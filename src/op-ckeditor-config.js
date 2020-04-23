@@ -2,6 +2,35 @@ import { userMentions } from "./mentions/user-mentions";
 import { workPackageMentions } from "./mentions/work-package-mentions";
 import {customItemRenderer} from './mentions/mentions-item-renderer';
 
+const customColorPalette = [
+    {
+        color: 'hsl(4, 90%, 58%)',
+        label: 'Red'
+    },
+    {
+        color: 'hsl(340, 82%, 52%)',
+        label: 'Pink'
+    },
+    {
+        color: 'hsl(291, 64%, 42%)',
+        label: 'Purple'
+    },
+    {
+        color: 'hsl(262, 52%, 47%)',
+        label: 'Deep Purple'
+    },
+    {
+        color: 'hsl(231, 48%, 48%)',
+        label: 'Indigo'
+    },
+    {
+        color: 'hsl(207, 90%, 54%)',
+        label: 'Blue'
+    },
+
+    // ...
+];
+
 export const defaultConfig = {
 	heading: {
 		options: [
@@ -49,7 +78,17 @@ export const defaultConfig = {
 		]
 	},
 	table: {
-		contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
+		contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties' ],
+		// Configuration of the TableProperties plugin.
+		tableProperties: {
+			borderColors: customColorPalette,
+			backgroundColors: customColorPalette
+		},
+		// Configuration of the TableCellProperties plugin.
+		tableCellProperties: {
+			borderColors: customColorPalette,
+			backgroundColors: customColorPalette
+		}
 	},
 
 	mention: {

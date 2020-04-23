@@ -35,6 +35,8 @@ import OPSourceCodePlugin from './plugins/op-source-code.plugin';
 // import Mention from "../forked/ckeditor5-mention/src/mention";
 import Mention from "@ckeditor/ckeditor5-mention/src/mention";
 import {MentionCaster} from './mentions/mentions-caster';
+import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
+import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
 
 // We divide our plugins into separate concerns here
 // in order to enable / disable each group by configuration
@@ -84,6 +86,8 @@ export const builtinPlugins = [
 	CommonMark,
 	Table,
 	TableToolbar,
+	TableProperties,
+	TableCellProperties,
 
 	OPMacroListPlugin,
 
