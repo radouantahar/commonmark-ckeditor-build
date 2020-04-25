@@ -14,7 +14,6 @@ const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' 
 const UglifyJsWebpackPlugin = require( 'uglifyjs-webpack-plugin' );
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const TerserPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
 const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
@@ -45,10 +44,6 @@ let config = {
 		} ),
 
 		// new BundleAnalyzerPlugin(),
-		
-		   new MiniCssExtractPlugin( {
-			   filename: 'styles.css'
-		   } )
 	],
 
 	devtool: 'source-map',
@@ -63,8 +58,6 @@ let config = {
 			{
 				test: /\.css$/,
 				use: [
-					MiniCssExtractPlugin.loader,
-                    'css-loader',
 					{
 						loader: 'style-loader',
 						options: {
